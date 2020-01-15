@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MemoryCheck</string>
+    <string name="start_game">Начать игру</string>
+    <string name="check_memory">Проверь свою память</string>
+    <string name="choice">Выбери уровень сложности</string>
+    <string name="easy">Легко</string>
+    <string name="medium">Средне</string>
+    <string name="hard">Сложно</string>
+    <string name="prefix">image</string>
+</resources>
