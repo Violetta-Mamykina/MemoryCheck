@@ -7,7 +7,11 @@
     <string name="medium">Средне</string>
     <string name="hard">Сложно</string>
     <string name="prefix">image</string>
-    <string name="end">Игра закончена</string>
+    <string name="end_win">Вы победили</string>
+    <string name="end_lose">Вы проиграли</string>
     <string name="repeat_game">Повторить игру</string>
     <string name="exit">Выйти в меню</string>
+    <string name="sure">Уверены, что хотите выйти?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
 </resources>

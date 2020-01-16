@@ -89,12 +89,14 @@ internal class GridAdapter(
         return
     }
 
-    fun openCell(position: Int) {
+    fun openCell(position: Int): Boolean {
+        if (statusCells[position] == status.CELL_DELETE || statusCells[position] == status.CELL_OPEN)
+            return false
         if (statusCells[position] != status.CELL_DELETE)
             statusCells[position] = status.CELL_OPEN
 
         notifyDataSetChanged()
-        return
+        return true
     }
 
     fun checkGameOver(): Boolean {

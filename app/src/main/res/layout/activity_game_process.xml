@@ -6,7 +6,8 @@
     android:orientation="vertical"
     tools:context=".GameProcess">
 
-    <Button
+    <TextView
+        android:id="@+id/moves"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />

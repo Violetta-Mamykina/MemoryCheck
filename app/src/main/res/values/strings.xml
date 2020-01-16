@@ -7,7 +7,11 @@
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
     <string name="prefix">image</string>
-    <string name="end">You win</string>
+    <string name="end_win">You win</string>
+    <string name="end_lose">You lose</string>
     <string name="repeat_game">Repeat</string>
     <string name="exit">Exit to menu</string>
+    <string name="sure">Are you sure you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>
