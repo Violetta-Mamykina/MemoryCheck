@@ -14,4 +14,5 @@
     <string name="sure">Уверены, что хотите выйти?</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
+    <string name="moves_left">Осталось ходов:</string>
 </resources>

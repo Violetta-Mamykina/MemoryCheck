@@ -1,5 +1,6 @@
 package com.example.memorycheck
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.app.Activity
 import android.app.AlertDialog
@@ -25,10 +26,17 @@ class GameProcess : Activity() {
     private lateinit var pictures: ArrayList<String>
     private lateinit var moves: TextView
     var GRID_COLUMN = 0
+    var GRID_COLUMN_EASY = 4
+    var GRID_COLUMN_MEDIUM = 6
+    var GRID_COLUMN_HURD = 8
     var GRID_ROW = 3
     var movesNumber = 0.0
+    var movesNumberEasy = 15.0
+    var movesNumberMedium = 20.0
+    var movesNumberHurd = 30.0
 
 
+    @SuppressLint("SetTextI18n")
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_process)
@@ -36,16 +44,16 @@ class GameProcess : Activity() {
         moves = findViewById<TextView>(R.id.moves)
         when (level) {
             0 -> {
-                GRID_COLUMN = 4
-                movesNumber = 15.0
+                GRID_COLUMN = GRID_COLUMN_EASY
+                movesNumber = movesNumberEasy
             }
             1 -> {
-                GRID_COLUMN = 6
-                movesNumber = 20.0
+                GRID_COLUMN = GRID_COLUMN_MEDIUM
+                movesNumber = movesNumberMedium
             }
             2 -> {
-                GRID_COLUMN = 8
-                movesNumber = 30.0
+                GRID_COLUMN = GRID_COLUMN_HURD
+                movesNumber = movesNumberHurd
             }
         }
 
@@ -53,7 +61,7 @@ class GameProcess : Activity() {
         grid.numColumns = GRID_COLUMN
         grid.isEnabled = true
 
-        moves.text = movesNumber.toInt().toString()
+        moves.text = getString(R.string.moves_left) + movesNumber.toInt().toString()
         val display =
             (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
         val displayHeight = display.height
@@ -67,7 +75,7 @@ class GameProcess : Activity() {
                 adapter.checkOpenCells()
                 if (adapter.openCell(position)) {
                     movesNumber -= 0.5
-                    moves.text = movesNumber.roundToInt().toString()
+                    moves.text = "Осталось ходов: " + movesNumber.roundToInt().toString()
                 }
                 if (movesNumber == 0.0) {
                     endGame(R.string.end_lose)
